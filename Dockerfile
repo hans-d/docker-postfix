@@ -2,8 +2,9 @@
 FROM hansd/base:14.04
 MAINTAINER Hans Donner <hans.donner@pobox.com> "https://github.com/hans-d"
 
-RUN mkdir -p /docker/scripts
-RUN mkdir -p /docker/templates
+RUN mkdir -p /docker/scripts && \
+    mkdir -p /docker/templates
+ADD common/scripts /docker/scripts
 
 
 RUN apt-get -y install postfix
@@ -22,6 +23,8 @@ ADD scripts /docker/scripts
 RUN chmod +x /docker/scripts/*
 
 ADD templates /docker/templates
+
+ADD etc /docker/etc
 
 
 ENTRYPOINT ["/docker/scripts/start"]

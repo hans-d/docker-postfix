@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 . /docker/scripts/functions
@@ -9,7 +9,7 @@ POSTFIX_SSL_CERT=${POSTFIX_SSL_CERT:-/etc/ssl/certs/ssl-cert-snakeoil.pem}
 POSTFIX_SSL_KEY=${POSTFIX_SSL_KEY:-/etc/ssl/private/ssl-cert-snakeoil.key}
 POSTFIX_SSL=${POSTFIX_SSL:-true}
 
-POSTFIX_HOSTNAME=${POSTFIX_HOSTNAME:-}
+POSTFIX_HOSTNAME=${POSTFIX_HOSTNAME:-123}
 ALIAS_MAPS=${ALIAS_MAPS:-hash:/etc/aliases}
 ALIAS_DB=${ALIAS_DB:-hash:/etc/aliases}
 POSTFIX_DESTINATION=${POSTFIX_DESTINATION:-}

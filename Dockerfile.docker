@@ -9,6 +9,7 @@ $IMPORT common/supervisor.docker
 
 $IMPORT common/add-scripts.docker
 $IMPORT common/add-templates.docker
+$IMPORT common/add-etc.docker
 
 $IMPORT common/default-entrypoint.docker
 
