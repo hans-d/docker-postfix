@@ -1,4 +1,4 @@
-FROM hansd/base:1404
+FROM hansd/base-14.04
 MAINTAINER Hans Donner <hans.donner@pobox.com> "https://github.com/hans-d"
 
 $IMPORT common/default-layout.docker
