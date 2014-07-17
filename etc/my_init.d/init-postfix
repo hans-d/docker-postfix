@@ -28,7 +28,7 @@ update_template / POSTFIX_HOSTNAME "${POSTFIX_HOSTNAME}" /etc/postfix/main.cf
 update_template , ALIAS_MAPS "${ALIAS_MAPS}" /etc/postfix/main.cf
 update_template , ALIAS_DB "${ALIAS_DB}" /etc/postfix/main.cf
 update_template / POSTFIX_DESTINATION "${POSTFIX_DESTINATION}" /etc/postfix/main.cf
-update_template ; POSTFIX_RELAY_HOSTS "${POSTFIX_RELAY_HOSTS}" /etc/postfix/main.cf
-update_template / POSTFIX_NETWORKS "${POSTFIX_NETWORKS}" /etc/postfix/main.cf
+update_template , POSTFIX_RELAY_HOSTS "${POSTFIX_RELAY_HOSTS}" /etc/postfix/main.cf
+update_template , POSTFIX_NETWORKS "${POSTFIX_NETWORKS}" /etc/postfix/main.cf
 
-update_template ; POSTFIX_CFG "${POSTFIX_CFG}" /etc/supervisor/conf.d/postfix.conf
+
