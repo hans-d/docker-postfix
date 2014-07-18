@@ -2,7 +2,9 @@ FROM hansd/base:latest
 MAINTAINER Hans Donner <hans.donner@pobox.com> "https://github.com/hans-d"
 
 RUN apt-get -y install postfix && \
-    rm /etc/postfix/*.cf
+    rm /etc/postfix/*.cf && \
+    cp /etc/resolv.conf /var/spool/postfix/etc/. && \
+    cp /etc/services /var/spool/postfix/etc/.
 
 $IMPORT common/default-layout.docker
 $IMPORT common/add-templates.docker
