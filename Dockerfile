@@ -4,7 +4,6 @@ MAINTAINER Hans Donner <hans.donner@pobox.com> "https://github.com/hans-d"
 
 RUN apt-get -y install postfix && \
     rm /etc/postfix/*.cf && \
-    cp /etc/resolv.conf /var/spool/postfix/etc/. && \
     cp /etc/services /var/spool/postfix/etc/.
 
 RUN mkdir -p /docker/scripts /docker/templates
