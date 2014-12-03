@@ -20,6 +20,10 @@ POSTFIX_NETWORKS=${POSTFIX_NETWORKS:-127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/12
 
 POSTFIX_CFG=${POSTFIX_CFG:-/etc/postfix}
 
+POSTFIX_PROXY_POSTSCREEN=${POSTFIX_PROXY_POSTSCREEN:-}
+POSTFIX_PROXY_SMTPD=${POSTFIX_PROXY_POSTSCREEN:-}
+
+
 status "Configure templates"
 copy_template_if_not_present "postfix" "/etc/postfix"
 
@@ -33,4 +37,5 @@ update_template / POSTFIX_DESTINATION "${POSTFIX_DESTINATION}" /etc/postfix/main
 update_template , POSTFIX_RELAY_HOSTS "${POSTFIX_RELAY_HOSTS}" /etc/postfix/main.cf
 update_template , POSTFIX_NETWORKS "${POSTFIX_NETWORKS}" /etc/postfix/main.cf
 
-
+update_template / POSTFIX_PROXY_POSTSCREEN "${POSTFIX_PROXY_POSTSCREEN}" /etc/postfix/main.cf
+update_template / POSTFIX_PROXY_SMTPD "${POSTFIX_PROXY_POSTSCREEN}" /etc/postfix/main.cf
